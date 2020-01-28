@@ -1,0 +1,73 @@
+
+.login {
+    font-size: 12px;
+    width: 250px;
+    height: 180px;
+    /* margin-left: 15rem; */
+}
+
+
+
+.login input {
+    font-size: 12px;
+    max-width: 200rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.login a {
+    border-radius: 20px;
+    font-size: 12px;
+    height: 30px;
+    margin: 2px;
+}
+
+.login input {
+    border-color: lightgrey;
+    border-radius: 20px;
+    height: 30px;
+    margin: 1px; 
+}
+
+.login .btn {
+    border-radius: 25px;
+    margin: 1px;
+    font-size: inherit;  
+}
+
+.btn-login {
+    background-color: rgba(255, 217, 0, 0.945);
+    border-color: black;
+    color: black;  
+}
+
+.btn-login:hover, .btn-login:active {
+    background-color: black !important;
+    border-color: rgba(255, 228, 73, 0.938) !important;
+    color: rgba(255, 228, 73, 0.938) !important;
+
+}
+
+.btn-forgot {
+    color: black;
+    background-color: rgb(255, 203, 203);
+    border-color: black;
+}
+
+.btn-forgot:hover, .btn-forgot:active {
+    border-color: black !important;
+}
+
+
+/* background-color: rgba(255, 228, 73, 0.938);
+    border-color: black;
+    color: black;  */      
+
+    /* background-color: black;
+    border-color: rgba(255, 228, 73, 0.938);
+    color: rgba(255, 228, 73, 0.938);  */
+
+
+
+

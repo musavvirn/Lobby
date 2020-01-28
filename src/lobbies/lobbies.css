@@ -1,0 +1,145 @@
+.lobbies {
+    float: none;
+    position: static;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    /* background-color: rgb(245, 243, 243); */
+    margin-left: 0px;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.panel {
+    position: -webkit-sticky;
+    margin-top: 300px;
+}
+
+.panel button {
+    font-size: 12px;
+    border-radius: 25px;
+}
+
+.panel table {
+    margin-right: 100px; 
+    column-width: 50px;
+}
+
+.lobbies thead tr th {
+    background-color: white;
+}
+
+.lobbies tr td {
+    padding: 5px;
+    height: 45px;
+    vertical-align: middle;
+}
+
+.rows th {
+    min-width: 50px;
+    max-width: 75px;
+}
+
+.rows td {
+    color: white;
+    font-style: oblique;
+    background-color: #181714;
+}
+
+
+
+
+.row-name {
+    text-align: left;
+    max-width: 150px;
+}
+
+.btn-join {
+    opacity: 0.95 !important;
+    /* background-color: rgba(255, 224, 45, 0.938); */
+    border-color: black;
+    color: rgb(46, 46, 46);
+    border: none;
+    background:linear-gradient(45deg,#ffe388, #fffc4d);
+    transition:all .25s ease;opacity:.65;
+    box-shadow: 
+            0 0 2px 1px #ffce48  ,
+            0 0 2px 1px rgb(255, 255, 255);
+    
+}
+
+.btn-join:hover {
+    opacity: 1 !important;
+    background:linear-gradient(45deg,#fffd81,#ffbd08);
+    width: 125px;
+    transition:all .25s ease;opacity: 1; 
+    box-shadow: 
+    0 0 3px 1px #ffec43  ,
+    0 0 3px 1px rgb(255, 255, 255) !important;
+}
+
+.btn-join:focus  {
+    background:linear-gradient(45deg,#fffd81,#ffbd08);    
+    width: 125px;
+    box-shadow: 
+    0 0 5px 2px #ffec43  ,
+    0 0 5px 5px rgb(255, 255, 255) !important;
+}
+
+
+
+
+.btn-full {
+    opacity: 0.5 !important;
+    border: none;
+    color: black !important;
+    background-color: grey !important;
+    box-shadow: 
+            0 0 5px 1px #bebebd,
+            0 0 5px 1px #464540;
+    
+}
+.btn-slot {
+    border-radius:  15px !important;
+    border: none !important;
+    color: rgb(46, 46, 46) !important;
+    background:linear-gradient(45deg,#ffffff,#fff6a4);
+    transition:all .25s ease;opacity:1;
+    box-shadow: 
+            0 0 2px 2px #fff282  ,
+            0 0 2px 2px rgb(255, 255, 255);
+
+}
+
+.btn-slot:hover, .btn-slot:focus {
+    background:linear-gradient(45deg,#ffffff,#fce300);
+    transition:all .25s ease;opacity:1;
+    box-shadow: 
+            0 0 3px 2px #ffe600  ,
+            0 0 3px 2px rgb(255, 255, 255) !important;
+}
+
+
+.row-btn {
+
+    border-radius: 15px;
+    font-size: 12px;
+    width: 100px; 
+    height: 30px; 
+    padding: 5px;
+    margin: 0px;
+}
+
+.row-join {
+    width: 150px
+}
+
+
+.table-hover tr:hover {
+    /* background:linear-gradient(180deg, white, rgb(255, 254, 251), rgb(255, 254, 250), rgb(253, 249, 223), rgb(255, 245, 189), rgb(255, 237, 135), rgb(217, 90, 255)) !important;     */
+    background-color: rgb(248, 248, 248) !important;
+    outline: 1px solid rgb(99, 99, 99);
+}
+

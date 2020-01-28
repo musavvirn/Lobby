@@ -1,0 +1,42 @@
+.room {
+    min-width: 800px !important;
+    min-height: 300px;
+    border: 1px solid black;
+    align-content: flex-start;
+    
+}
+.slot-row {
+    margin-top: 1px;
+}
+
+.player-btn {
+    height: 30px !important;
+    font-size: 12px !important;
+}
+.tick {
+    width: 30px !important; 
+    height: 30px !important;
+    /* font-size: 20px !important; */
+}
+.title {
+    font-size: 18px;
+    text-align: center;
+    
+}
+
+.settings {
+    vertical-align: middle;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.room-player {
+    vertical-align: middle;
+    
+    text-align: center;
+    font-size: 14px;
+    
+}

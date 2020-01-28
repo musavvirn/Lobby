@@ -1,0 +1,43 @@
+{
+  "homepage": "https://musavvirn.github.io/aoe2Lobby/",
+  "name": "lobby-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "gh-pages": "^2.2.0",
+    "logrocket": "^1.0.5",
+    "openid-client": "^3.9.2",
+    "passport": "^0.4.1",
+    "passport-openid": "^0.4.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.3.0",
+    "whatwg-fetch": "^3.0.0",
+    "ws": "^7.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "proxy": "http://localhost:5000",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

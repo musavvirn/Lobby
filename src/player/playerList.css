@@ -1,0 +1,44 @@
+.tick {
+    color: black;
+    vertical-align: middle;
+    padding: 0px;
+    border-radius: 50px;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.playerCard {
+    width: 200px;
+    border: 0px;
+}
+
+.steam-interact {
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    background-color: lightgreen;
+}
+
+.playerCard hr {
+    padding: 0px;
+    margin: 3px
+}
+
+.player-btn {
+    text-align: left;
+    vertical-align: middle;
+    padding: 0px;
+    border-radius: 25px;
+    font-size: 12px;
+    width: 150px;
+    height: 20px;
+    padding-left: 5px;
+    margin: 2px;
+    color: black;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.player-btn:hover {
+    background-color: rgb(255, 232, 100);
+}
