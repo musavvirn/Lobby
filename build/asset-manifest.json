@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/aoe2Lobby/static/css/main.655f66f1.chunk.css",
-    "main.js": "/aoe2Lobby/static/js/main.9982dfe2.chunk.js",
-    "main.js.map": "/aoe2Lobby/static/js/main.9982dfe2.chunk.js.map",
+    "main.js": "/aoe2Lobby/static/js/main.937e1f80.chunk.js",
+    "main.js.map": "/aoe2Lobby/static/js/main.937e1f80.chunk.js.map",
     "runtime-main.js": "/aoe2Lobby/static/js/runtime-main.ecb9ac36.js",
     "runtime-main.js.map": "/aoe2Lobby/static/js/runtime-main.ecb9ac36.js.map",
     "static/js/2.5e03ec0e.chunk.js": "/aoe2Lobby/static/js/2.5e03ec0e.chunk.js",
     "static/js/2.5e03ec0e.chunk.js.map": "/aoe2Lobby/static/js/2.5e03ec0e.chunk.js.map",
     "index.html": "/aoe2Lobby/index.html",
-    "precache-manifest.33967b723727ba39ef01c6e7cdfa431a.js": "/aoe2Lobby/precache-manifest.33967b723727ba39ef01c6e7cdfa431a.js",
+    "precache-manifest.fe77a1943e0004ec483b4529368ab578.js": "/aoe2Lobby/precache-manifest.fe77a1943e0004ec483b4529368ab578.js",
     "service-worker.js": "/aoe2Lobby/service-worker.js",
     "static/css/main.655f66f1.chunk.css.map": "/aoe2Lobby/static/css/main.655f66f1.chunk.css.map",
     "static/js/2.5e03ec0e.chunk.js.LICENSE": "/aoe2Lobby/static/js/2.5e03ec0e.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ecb9ac36.js",
     "static/js/2.5e03ec0e.chunk.js",
     "static/css/main.655f66f1.chunk.css",
-    "static/js/main.9982dfe2.chunk.js"
+    "static/js/main.937e1f80.chunk.js"
   ]
 }
