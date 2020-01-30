@@ -14,10 +14,17 @@
 }
 
 .steam-interact {
-    font-size: 10px !important;
-    /* border: 1px solid lightblue; */
-    border-radius: 5px;
-    /* background-color: lightgreen; */
+    color: white;
+    text-align: center !important;
+    vertical-align: middle;
+    font-size: 12px !important;
+    width: 100px;
+    height: 30px !important;
+    margin: 1px;
+    border-radius: 25px;
+    box-shadow: 
+            0 0 2px 1px #48b6ff  ,
+            0 0 2px 1px rgb(255, 255, 255);
 }
 
 .playerCard hr {
