@@ -40,9 +40,9 @@ class PlayerInfo extends Component {
                             Games Played Today: <br></br>
                             Total Games: {this.state.info.games}<br></br>
                             Wins: {this.state.info.wins}<br></br>
-                            <a className="steam-interact" href={"https://steamcommunity.com/profiles/" + this.state.info.steam_id}> Steam Profile </a>
-                            <a className="steam-interact" href={"steam://friends/add/" + this.state.info.steam_id}> Add Friend </a>
-                            <a className="steam-interact" href={"steam://friends/message/" + this.state.info.steam_id}> Message </a>
+                            <a className="steam-interact btn btn-warning" href={"https://steamcommunity.com/profiles/" + this.state.info.steam_id}> Steam Profile </a>
+                            <a className="steam-interact btn btn-warning" href={"steam://friends/add/" + this.state.info.steam_id}> Add Friend </a>
+                            <a className="steam-interact btn btn-warning" href={"steam://friends/message/" + this.state.info.steam_id}> Message </a>
                             
                         
                         </p>
