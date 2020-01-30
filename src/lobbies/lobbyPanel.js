@@ -5,7 +5,7 @@ import NotificationService, { NOTIF_LOBBY_UPDATED } from '../services/notificati
 import './lobbies.css';
 const HD_APP_ID = 221380;
 const DE_APP_ID = 813780;
-const INTERVAL = 5000;
+const INTERVAL = 30000;
 
 var notifService = new NotificationService();
 var lobbyService = new LobbyService();
@@ -186,13 +186,13 @@ class LobbyPanel extends Component {
                 <thead>
                 <tr className="rows">
                     {/* <th>Game ID</th> */}
-                    <th>Data Set</th>
-                    <th>Name</th> 
-                    <th>Mode</th>
-                    <th>Map</th>
-                    <th className="row-join">Join</th>
-                    <th>Players</th>
-                    <th>ELO</th>
+                    <th className="container-title">Data Set</th>
+                    <th className="container-title">Name</th> 
+                    <th className="container-title">Mode</th>
+                    <th className="container-title">Map</th>
+                    <th className="row-join container-title">Join</th>
+                    <th className="container-title">Players</th>
+                    <th className="container-title">Rating (Avg)</th>
                     
                 </tr>
                 </thead>

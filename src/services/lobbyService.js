@@ -61,10 +61,12 @@ class LobbyService extends Component{
             (filters.map === all || this.getMapName(l.map_type) === filters.map) &&
             (filters.solo === all || 
                 ((filters.solo === "1v1") && (l.num_slots === 2)) ||
-                ((filters.solo === "Team Games") && l.num_slots > 2)))
-                {
+                ((filters.solo === "Team Games") && l.num_slots > 2)) &&
+            (filters.elo === "0" || l.average_rating >= filters.elo)) {
+
                 filteredLobbyList.push(l);
-                }    
+            }
+                
     }
 
     setFilter(filter, id) {
