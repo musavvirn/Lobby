@@ -34,7 +34,7 @@ class PlayerInfo extends Component {
             return (
                 <div className="App-card player-card playerCard">
                         <p className="name">
-                            
+                            <h6 className="container-title"> Player Info </h6>
                             Name: <span></span> {this.state.info.name} <br></br>
                             Rating (1v1): <span></span> {this.state.info.rating} <br></br>
                             Games Played Today: <br></br>

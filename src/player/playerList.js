@@ -34,7 +34,7 @@ class PlayerList extends Component {
         if (true) {
             return (    
                 <div className="shadow-sm App-card player-card playerCard p-list">
-                    Player List:
+                    <h6 className="container-title"> Players (Selected Lobby) </h6>
                     <hr></hr>
                     {this.displayPlayer()}
                 </div>
@@ -48,10 +48,10 @@ class PlayerList extends Component {
     displayPlayer() {
         var list = this.state.players.map((player) =>
             <div key={player.profile_id}>
-                <button className="btn btn-outline-success tick"
+                {/* <button className="btn btn-outline-success tick"
                 onClick={this.addFriend.bind(this, player)}><span>&#10003;</span></button>
-                <span></span>
-                <button name={player.name} className="btn btn-outline-warning player-btn"
+                <span></span> */}
+                <button name={player.name} className="btn btn-dark player-btn"
                 onMouseOver={this.hoverInfo}
                 onMouseLeave={this.hideInfo}>{" (" + player.rating + ") " + player.name}</button>
                 

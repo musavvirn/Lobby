@@ -2,7 +2,7 @@
     float: none;
     position: static;
     color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI Light';
     font-size: 12px;
     font-style: normal;
     /* background-color: rgb(245, 243, 243); */
@@ -28,7 +28,9 @@
 }
 
 .lobbies thead tr th {
-    background-color: white;
+    font-size: 12px !important;
+    font-style: normal;
+    background-color: rgb(236, 236, 236);
 }
 
 .lobbies tr td {
@@ -37,16 +39,23 @@
     vertical-align: middle;
 }
 
+
 .rows th {
     min-width: 50px;
     max-width: 75px;
 }
 
+/* lobby row */
 .rows td {
     color: white;
     font-style: oblique;
-    background-color: #181714;
+    background-color: #35332f;
 }
+
+.rows td:hover {
+    background-color: #22211f !important;
+}
+
 
 
 

@@ -9,7 +9,7 @@ const modes = ["All", "Random Map", "Regicide", "Death Match", "Sudden Death", "
 const dataset = ["All", "DE", "Custom"];
 const maps = ["All", "Arabia", "Arena", "Black Forest", "Nomad", "Gold Rush", "Coastal", "Other Maps"];
 
-const ELO = [0, 1600, 1800, 2000, 2200];
+const ELO = [0, 800, 1000, 1400, 1600, 1800];
 const solo = ["All", "1v1", "Team Games"];
 
 class FilterPanel extends Component {
@@ -22,6 +22,7 @@ class FilterPanel extends Component {
     render() {
         return (
             <div className="player-card App-card shadow-sm">
+            <h6 className="container-title"> Filters </h6>
                <Filter name="Game Mode" items={modes} id={1}/>
                <Filter name="Data Set" items={dataset} id={2}/>
                <Filter name="Map" items={maps} id={3}/>

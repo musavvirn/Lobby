@@ -34,7 +34,7 @@ class Filter extends Component {
 
         const x = this.props.items; 
         return (
-            <div className="App-card filter">
+            <div className="filter">
                 <p> {this.props.name} 
                 <select className="border-white shadow" value={this.state.value} onChange={this.selected}>
                     {this.generateOption(x)}

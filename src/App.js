@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
 import Login from './profile/login';
-import Room from './room/room';
 import ProfileInfo from './profile/profileInfo';
 import Steam from './profile/steam';
-import LobbyService from './services/lobbyService';
 import ProfileService from './services/profileService';
 import PlayerList from './player/playerList';
 import PlayerInfo from './player/playerInfo';
 import FilterPanel from './filters/filterPanel';
 import LobbyPanel from './lobbies/lobbyPanel'
-import LobbyHost from './room/lobbyHost';
 
 // const HD_APP_ID = 221380;
 // const DE_APP_ID = 813780;
