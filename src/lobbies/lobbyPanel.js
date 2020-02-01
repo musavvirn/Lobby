@@ -5,7 +5,7 @@ import NotificationService, { NOTIF_LOBBY_UPDATED } from '../services/notificati
 import './lobbies.css';
 const HD_APP_ID = 221380;
 const DE_APP_ID = 813780;
-const INTERVAL = 30000;
+const INTERVAL = 3000;
 
 var notifService = new NotificationService();
 var lobbyService = new LobbyService();
@@ -48,7 +48,7 @@ class LobbyPanel extends Component {
     //checks if lobby is full and renders join/full button with steam join link
     fullLobby(lobby) {
         if (lobby.started === null) {
-            return (<td><button onClick={event =>  window.location.href="steam://joinlobby/" +HD_APP_ID + "/" +lobby.id} className=" btn btn-warning btn-join row-btn">Join</button></td>);   
+            return (<td><button onClick={event =>  window.location.href="steam://joinlobby/" + DE_APP_ID + "/" + lobby.lobby_steam_id} className=" btn btn-warning btn-join row-btn">Join</button></td>);   
         } else {
             return (<td><button disabled className="btn btn-dark disabled btn-full row-btn">Full</button></td>);
         }
