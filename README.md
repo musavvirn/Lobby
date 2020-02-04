@@ -1,4 +1,4 @@
-<b>Lobby Browser<b>
+<b>Lobby Browser</b>
 
 Real-time multiplayer lobby browser for Age of Empires II : DE, built with api provided by aoe2.net. You can see it live here: https://musavvirn.github.io/Lobby/
 
