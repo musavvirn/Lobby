@@ -9,9 +9,6 @@ import PlayerInfo from './player/playerInfo';
 import FilterPanel from './filters/filterPanel';
 import LobbyPanel from './lobbies/lobbyPanel'
 
-// const HD_APP_ID = 221380;
-// const DE_APP_ID = 813780;
-
 const newPlayer = new ProfileService();
 class App extends Component {
 
@@ -47,21 +44,21 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-            <h4> LOBBY BROWSER </h4>
+            <h4> Age of Empires II : Definitive Edition - Multiplayer Lobby <span><a className="github-link" href="https://github.com/musavvirn/Lobby"> (github) </a></span></h4>
+            
           </div>
           <div className="shadow-lg container">
             
             {this.createPlayer()}
-            {/* <Steam /> */}
-            {/* <LobbyHost /> */}
+          
             <FilterPanel />
             <PlayerList />
             <PlayerInfo />
-            {/* <Login/>  */}
+
             
           </div>
           
-          <div className="shadow-lg">      
+          <div className="shadow-lg container">      
             <LobbyPanel />
           </div>
       </div>

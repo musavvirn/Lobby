@@ -13,6 +13,10 @@
     border: 0px;
 }
 
+.name {
+    text-shadow: 0px 0px 1px black;
+}
+
 .steam-interact {
     color: white;
     text-align: center !important;
@@ -21,10 +25,22 @@
     width: 100px;
     height: 30px !important;
     margin: 1px;
-    border-radius: 25px;
+    border: none;
+    background: linear-gradient(45deg, #dd8eff,#5f25ff)!important;
+    transition: all .25s ease;opacity:.7;
+
     box-shadow: 
-            0 0 2px 1px #48b6ff  ,
-            0 0 2px 1px rgb(255, 255, 255);
+    0 0 5px 1px #b355ff,
+    0 0 5px 1px #dfbbee;
+    
+}
+
+.steam-interact:hover {
+    background: linear-gradient(45deg,#dd8eff,#702df9) !important;
+    transition: all .25s ease !important;
+    opacity: 1 !important;
+
+    
 }
 
 .playerCard hr {
@@ -33,27 +49,30 @@
 }
 
 .player-btn {
-    color: white;
-    background-color: rgb(77, 74, 67) !important;
-    border: 0px;
     text-align: left !important;
     vertical-align: middle;
+    color: black;
+    font-style: italic;
+    text-shadow: 0px 0px 1px black;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+
+    outline: none;
     padding: 0px;
-    border-radius: 3px;
+    border: 1px solid rgb(104, 103, 103);
+    border-radius: 2px;
     font-size: 12px;
     width: 180px;
     height: 25px;
-    padding-left: 5px;
-    margin: 1px;
-    box-shadow: 
-            0 0 2px 1px #302d23  ,
+    padding-left: 5px; 
+    box-shadow:    
             0 0 2px 1px rgb(255, 255, 255);
 }
 
-.player-btn:hover {
-    background-color: rgb(32, 31, 28) !important;
-    box-shadow: 
-            0 0 2px 1px #302d23  ,
-            0 0 2px 1px rgb(255, 255, 255);
+.player-btn:hover, .player-btn::after, .player-btn:focus, .player-btn:active {
+    text-shadow: 0px 0px 3px gold;
+    color: gold !important;
+    background-color: #22211f !important;
 
 }

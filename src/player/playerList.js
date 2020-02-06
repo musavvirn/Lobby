@@ -51,7 +51,7 @@ class PlayerList extends Component {
                 {/* <button className="btn btn-outline-success tick"
                 onClick={this.addFriend.bind(this, player)}><span>&#10003;</span></button>
                 <span></span> */}
-                <button name={player.name} className="btn btn-dark player-btn"
+                <button name={player.name} className="btn btn-outline-dark player-btn"
                 onMouseOver={this.hoverInfo}
                 onMouseLeave={this.hideInfo}>{" (" + player.rating + ") " + player.name}</button>
                 
