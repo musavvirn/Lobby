@@ -5,7 +5,7 @@ import NotificationService, { NOTIF_LOBBY_UPDATED } from '../services/notificati
 import './lobbies.css';
 const HD_APP_ID = 221380;
 const DE_APP_ID = 813780;
-const INTERVAL = 1000000;
+const INTERVAL = 2000;
 
 var notifService = new NotificationService();
 var lobbyService = new LobbyService();
