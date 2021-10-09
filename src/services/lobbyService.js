@@ -175,10 +175,15 @@ class LobbyService extends Component{
         //                 .then(async response => {
         //                     return await response.json();
         //                 });
-        return await fetch(proxy2 + "https://aoe2.net/api/lobbies?game=aoe2de")
-                        .then(async response => {
-                            return await response.json();
-                        });
+        // return await fetch(proxy2 + "https://aoe2.net/api/lobbies?game=aoe2de")
+        //                 .then(async response => {
+        //                     return await response.json();
+        //                 });
+
+        return await fetch("https://aoe2.net/api/lobbies?game=aoe2de")
+            .then(async response => {
+                return await response.json();
+            });
     }
 
     async getLobbyId(steamid) {
