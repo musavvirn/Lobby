@@ -45,7 +45,7 @@ class App extends Component {
       <div className="App">
         <div>
             <h4> Age of Empires II : Definitive Edition - Multiplayer Lobby <span><a className="github-link" href="https://github.com/musavvirn/Lobby"> (github) </a></span></h4>
-          <h6>Last Updated: 9 Oct 2021</h6>
+          <h6>Last Updated: 15 Oct 2021</h6>
             
           </div>
           <div className="shadow-lg container">
