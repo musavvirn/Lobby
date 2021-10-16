@@ -12,7 +12,7 @@ var notifService = new NotificationService();
 var notifService3 = new NotificationService3();
 //default value of all filter types
 const all = "All";
-const filters = {mode: all, dataset: all, map: all, elo: 0, solo: all};
+const filters = {mode: all, dataset: all, map: all, elo: 0, solo: all, search:""};
 
 class LobbyService extends Component{
     //single instance of lobbies
@@ -50,23 +50,31 @@ class LobbyService extends Component{
         notifService.updateNotif(NOTIF_LOBBY_UPDATED, filteredLobbyList);
     }
 
-    
+
 
     applyFilter(l) {
         if (
-            (filters.dataset === all || 
+            (filters.dataset === all ||
             ((filters.dataset === "DE") && (l.has_custom_content === null)) ||
             ((filters.dataset === "Custom") && (l.has_custom_content !== null))) &&
             (filters.mode === all || this.getMode(l.game_type) === filters.mode) &&
             (filters.map === all || this.getMapName(l.map_type) === filters.map) &&
-            (filters.solo === all || 
+            (filters.solo === all ||
                 ((filters.solo === "1v1") && (l.num_slots === 2)) ||
                 ((filters.solo === "Team Games") && l.num_slots > 2)) &&
             (filters.elo === "0" || l.average_rating >= filters.elo)) {
 
                 filteredLobbyList.push(l);
             }
-                
+
+    }
+
+    /* Apply's search box value to lobby title */
+    applySearchFilter(l) {
+        if (l.name.toLowerCase().includes(filters.search.toLowerCase())){
+            filteredLobbyList.push(l);
+        }
+
     }
 
     setFilter(filter, id) {
@@ -86,6 +94,8 @@ class LobbyService extends Component{
             case 5: 
             filters.solo = filter;
             break;
+            case 6:
+                filters.search = filter;
             default:
                 break;
         }
@@ -155,7 +165,6 @@ class LobbyService extends Component{
         this.filterLobby(3, all);
         this.filterLobby(4, 0);
         this.filterLobby(5, all);
-        // console.log(this.fetchLobbyID());
         notifService3.updateNotif(NOTIF_FILTER_RESET, filteredLobbyList);
     }
 
@@ -196,7 +205,18 @@ class LobbyService extends Component{
                         });
     }
 
-    
+
+    filterLobbyBySearch(id, filter) {
+        filteredLobbyList = [];
+        //case id represents each filter, top to bottom
+        this.setFilter(filter, id);
+        (async () => {
+            allLobby = await this.getAllLobby();
+        })();
+        allLobby.forEach(l => this.applySearchFilter(l));
+        notifService.updateNotif(NOTIF_LOBBY_UPDATED, filteredLobbyList);
+
+    }
 }
 
 export default LobbyService;
