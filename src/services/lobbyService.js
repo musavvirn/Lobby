@@ -3,14 +3,13 @@ import {Component} from 'react';
 import NotificationService, { NOTIF_LOBBY_UPDATED } from '../services/notificationService';
 import NotificationService3, { NOTIF_FILTER_RESET } from '../services/notificationService';
 
-
-
 var instance = null;
 var allLobby = [];
 var filteredLobbyList = [];
 var notifService = new NotificationService();
 var notifService3 = new NotificationService3();
 //default value of all filter types
+
 const all = "All";
 const filters = {mode: all, dataset: all, map: all, elo: 0, solo: all, search:""};
 
@@ -35,7 +34,7 @@ class LobbyService extends Component{
     }
 
     getL() {
-        console.log(allLobby);
+        //console.log(allLobby);
         return allLobby;
     }
 
@@ -43,10 +42,16 @@ class LobbyService extends Component{
         filteredLobbyList = [];
         //case id represents each filter, top to bottom
         this.setFilter(filter, id);
-        (async () => {
-            allLobby = await this.getAllLobby();
-        })();
-        allLobby.forEach(l => this.applyFilter(l));
+
+        try {
+            (async () => {
+                allLobby = await this.getAllLobby();
+            })();
+            allLobby.forEach(l => this.applyFilter(l));
+        } catch (e) {
+            console.log("lobbyService.filterLobby: "+ e);
+        }
+
         notifService.updateNotif(NOTIF_LOBBY_UPDATED, filteredLobbyList);
     }
 
@@ -103,6 +108,11 @@ class LobbyService extends Component{
 
     getMode(id) {
         var mode ="";
+
+        if (isNaN(id)) {
+            throw new TypeError("Expects a numeric arg");
+        }
+
         switch (id) {
                 case 0:
                 mode = "Random Map";
@@ -172,8 +182,13 @@ class LobbyService extends Component{
         let ll = await this.fetchLobby();
         filteredLobbyList = [];
 
-        await ll.forEach(l => this.applyFilter(l));
-        return await filteredLobbyList;
+        try {
+            await ll.forEach(l => this.applyFilter(l));
+            return await filteredLobbyList;
+
+        } catch (e) {
+            console.log("getAllLobby: " + e)
+        }
     }
 
     async fetchLobby() {
@@ -189,10 +204,18 @@ class LobbyService extends Component{
         //                     return await response.json();
         //                 });
 
-        return await fetch("https://aoe2.net/api/lobbies?game=aoe2de")
-            .then(async response => {
-                return await response.json();
-            });
+
+
+        try {
+            return await fetch("https://aoe2.net/api/lobbies?game=aoe2de")
+                .then(async response => {
+                    return await response.json();
+                });
+        }
+
+        catch (e) {
+            console.log("fetchLobby: " + e);
+        }
     }
 
     async getLobbyId(steamid) {

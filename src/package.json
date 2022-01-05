@@ -4,5 +4,8 @@
   "description": "DE-LOBBY",
   "author": {
     "name": ""
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }

@@ -8,6 +8,9 @@ import PlayerList from './player/playerList';
 import PlayerInfo from './player/playerInfo';
 import FilterPanel from './filters/filterPanel';
 import LobbyPanel from './lobbies/lobbyPanel'
+import {Provider} from "react-redux";
+import store from './app/store';
+import {Counter} from './app/counter'
 
 const newPlayer = new ProfileService();
 class App extends Component {
@@ -21,7 +24,7 @@ class App extends Component {
     this.getPlayerInfo();
   }
 
-    
+
   getPlayerInfo = () => {
     var self = this;
     // newPlayer.getPlayer().then(data => {
@@ -36,34 +39,39 @@ class App extends Component {
 
   createPlayer = () => {
     return (
-      <ProfileInfo id={this.state.player.id} name={this.state.player.name} elo={this.state.player.elo} totalMatches={this.state.player.games} winrate={this.state.player.winRate} todayMatches={this.state.player.todayGames} dateRegistered={this.state.player.dateRegistered} onlineStatus={this.state.player.onlineStatus}/>
+        <ProfileInfo id={this.state.player.id} name={this.state.player.name} elo={this.state.player.elo} totalMatches={this.state.player.games} winrate={this.state.player.winRate} todayMatches={this.state.player.todayGames} dateRegistered={this.state.player.dateRegistered} onlineStatus={this.state.player.onlineStatus}/>
     )
   }
 
   render() {
     return (
-      <div className="App">
-        <div>
-            <h4> Age of Empires II : Definitive Edition - Multiplayer Lobby <span><a className="github-link" href="https://github.com/musavvirn/Lobby"> (github) </a></span></h4>
-          <h6>Last Updated: 15 Oct 2021</h6>
-            
-          </div>
-          <div className="shadow-lg container">
-            
-            {this.createPlayer()}
-          
-            <FilterPanel />
-            <PlayerList />
-            <PlayerInfo />
+        <Provider store={store}>
 
-            
+          <div className="App">
+            <div>
+              <h4> Age of Empires II: Definitive Edition - Multiplayer Lobby <span><a className="github-link" href="https://github.com/musavvirn/Lobby"> (github) </a></span></h4>
+              <h6>Last Updated: 4 Jan 2022</h6>
+
+            </div>
+            <div className="shadow-lg container">
+
+              {this.createPlayer()}
+
+              <FilterPanel />
+              <PlayerList />
+              {/*<Counter />*/}
+              <PlayerInfo />
+
+
+            </div>
+
+            <div className="shadow-lg container">
+              <LobbyPanel />
+            </div>
           </div>
-          
-          <div className="shadow-lg container">      
-            <LobbyPanel />
-          </div>
-      </div>
-      );
+        </Provider>
+
+    );
   }
 }
 
