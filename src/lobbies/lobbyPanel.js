@@ -19,15 +19,35 @@ class LobbyPanel extends Component {
         this.onFilterChanged = this.onFilterChanged.bind(this);
         this.createLobbies = this.createLobbies.bind(this);  
         this.setLobbies = this.setLobbies.bind(this);
+        this.getInfo = this.getInfo.bind(this);
     }
 
     setLobbies() {
-        let x = [];
+        let rawLobby = [];
+        let automatch = [];
+        let finalized = [];
+
         (async () => {
-            x = await lobbyService.getAllLobby();
-            this.setState({lobbies: x});
-          })()
-        return x;
+            try {
+                rawLobby = await lobbyService.getAllLobby();
+                for (let i=0; i<rawLobby.length; i++) {
+                    console.log(rawLobby[i].rannked);
+                    if (rawLobby[i].ranked) {
+                        automatch.push(rawLobby[i]);
+                    } else {
+                        finalized.push(rawLobby[i]);
+                    }
+                }
+
+                let ff = finalized.concat(automatch);
+                this.setState({lobbies: ff});
+            } catch (e) {
+
+            }
+
+
+          })();
+        return rawLobby;
     }
     
     componentDidMount() {
@@ -61,25 +81,33 @@ class LobbyPanel extends Component {
         playerService.getPlayerInfo(this);   
     }
 
+    //Provide the selected lobby's raw data
+    getInfo(e) {
+        console.log(e.currentTarget);
+    }
+
     //create a lobby row
     createLobbies() {
             // console.log(this.state.lobbies);
-            console.log (this.state.lobbies);
-            const list = this.state.lobbies.map((lobby) => 
-            <tr className="rows" key={lobby.lobby_steam_id}>
-                {/* <td className="row-id">{".... " +lobby.id.toString().substring(lobby.id.toString().length-4,lobby.id.toString().length-1)}</td> */}
-                <td className="row-exp">{this.isCustomDataSet(lobby.has_custom_content)}</td>
-                <td className="row-name">{lobby.name}</td>
-                <td className="row-type">{this.gameType(lobby.game_type)}</td>
-                <td className="row-map">{this.mapType(lobby.map_type)}</td>
-                {this.fullLobby(lobby)}
-                
-                <td className="row-slot"><button className="btn btn-outline-warning btn-slot"
-                onClick={this.listPlayers.bind(lobby.players)}>{lobby.num_players.toString()+"/"+lobby.num_slots.toString()}</button></td>
-                <td className="row-elo">{lobby.average_rating}</td> 
-            </tr>
-        );
-        return (list);
+            //console.log (this.state.lobbies);
+        if (this.state.lobbies != undefined) {
+            const list = this.state.lobbies.map((lobby) =>
+                <tr className="rows" key={lobby.lobby_steam_id} onMouseEnter={this.getInfo}>
+                    {/* <td className="row-id">{".... " +lobby.id.toString().substring(lobby.id.toString().length-4,lobby.id.toString().length-1)}</td> */}
+                    <td className="row-exp">{this.isCustomDataSet(lobby.has_custom_content)}</td>
+                    <td className="row-name" onMouseEnter={this.getInfo} id={lobby}>{lobby.name}</td>
+                    <td className="row-type">{this.gameType(lobby.game_type)}</td>
+                    <td className="row-map">{this.mapType(lobby.map_type)}</td>
+                    {this.fullLobby(lobby)}
+
+                    <td className="row-slot"><button className="btn btn-outline-warning btn-slot"
+                                                     onClick={this.listPlayers.bind(lobby.players)}>{lobby.num_players.toString()+"/"+lobby.num_slots.toString()}</button></td>
+                    <td className="row-elo">{lobby.average_rating}</td>
+                </tr>
+            );
+            return (list);
+        }
+
     }
 
     rowHover() {
